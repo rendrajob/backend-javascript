@@ -25,7 +25,7 @@ Create a new file in your project directory. For example, create a file named `g
 ```js
 // logger.js
 function log(message) {
-  return `Luffy Log : ${message}`;
+  console.log(`Luffy Log : ${message}`);
 }
 
 module.exports = log;
@@ -34,3 +34,65 @@ module.exports = log;
 In this file, we define a function `log` and export it using `module.exports`. This allows other files to import and use the greet function.
 
 ### 2. Import and Use the Module
+
+In another file, such as `app.js`, you can import and use the `log` module:
+
+```js
+// app.js
+const log = require('./logger');
+
+log('Hello world!'); // Luffy Log : Hello world!
+```
+
+Here, we use `require` to import the `logger` function from `logger.js` and then call it.
+
+
+## Using Core Modules
+
+Node.js provides several built-in modules that you can use without needing to install them. Here’s an example of using the `fs` (file system) module to read a file:
+
+```js
+// readFile.js
+const fs = require('fs');
+const log = require('./logger');
+
+fs.readFile('poneglyph.txt', 'utf8', (err, data) => {
+  if (err) {
+    log(err);
+    return;
+  }
+  log(data);
+});
+```
+
+In this poneglyph, we import the fs module and use it to read the contents of `poneglyph.txt`.
+
+
+## Installing and Using Third-Party Modules
+
+To use third-party modules, you first need to install them using npm. Here’s how:
+
+### 1. Install a Module
+
+For example, to install the `lodash` module, run:
+
+```sh
+npm install lodash
+```
+
+### 2. Import and Use the Module
+
+After installing, you can use it in your code:
+
+```js
+// useLodash.js
+const _ = require('lodash');
+const log = require('./logger');
+
+const numbers = [1, 2, 3, 4, 5];
+const shuffled = _.shuffle(numbers);
+
+log(shuffled);
+```
+
+In this example, we import `lodash` using `require` and use its shuffle function to `shuffle` an array of numbers.
