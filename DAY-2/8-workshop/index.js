@@ -1,9 +1,8 @@
 const http = require('http');
 
 const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello, Digistar!\n');
+  res.writeHead(301, { Location: 'https://www.digistartelkom.id' });
+  res.end();
 });
 
 server.listen(3000, () => {

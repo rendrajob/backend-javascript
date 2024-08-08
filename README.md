@@ -39,6 +39,11 @@
    - Follow the installation instructions.
    - Launch VS Code once the installation is complete.
 
+3. **Download VSCode plugin**
+   - Visit `Extensions` tab on the left menu
+   - Find the extension named [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client)
+   - Install it and wait until the installation is complete
+
 ## Set VS Code as Default Code Editor (Optional but recommended)
 
 1. **Open VS Code and Use Command Palette:**

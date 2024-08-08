@@ -1,9 +1,10 @@
 const http = require('http');
+const url = require('url');
 
 const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello, Digistar!\n');
+  const parsedUrl = url.parse(req.url, true);
+  res.setHeader('Content-Type', 'application/json');
+  res.end(JSON.stringify(parsedUrl));
 });
 
 server.listen(3000, () => {

@@ -1,9 +1,8 @@
 const http = require('http');
 
 const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello, Digistar!\n');
+  res.setHeader('Set-Cookie', 'name=Digistar-Class; HttpOnly');
+  res.end('Cookie set\n');
 });
 
 server.listen(3000, () => {
